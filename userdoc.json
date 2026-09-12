@@ -1,0 +1,6 @@
+{
+  "pages_dir": "docs/reference",
+  "sources": [],
+  "tolerances": [],
+  "empty_inventory_reason": "À REMPLACER — ce projet n'a pas encore déclaré ce qu'il gèle. Tant que « sources » est vide, aucune mesure n'a lieu : sans cette phrase, le rapport rendrait « 0 trou, conforme » et se lirait comme une documentation complète (26EVO148). Remplace-la par la raison réelle, ou déclare tes sources et supprime ce champ."
+}
