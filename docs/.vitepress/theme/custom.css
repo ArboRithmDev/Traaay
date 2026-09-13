@@ -1,0 +1,196 @@
+/**
+ * Traaay - Axe 5: The Triple Capsule Theme
+ * Colors: Glacier Cyan (#38BDF8), Electric Blue (#3B82F6), Soft Mint (#34D399)
+ * Dark theme background: Dark Obsidian (#0F1117)
+ */
+
+:root {
+  --vp-c-brand-1: #0284c7;
+  --vp-c-brand-2: #38bdf8;
+  --vp-c-brand-3: #0369a1;
+  --vp-c-brand-soft: rgba(56, 189, 248, 0.12);
+
+  --traaay-cyan: #38bdf8;
+  --traaay-blue: #3b82f6;
+  --traaay-mint: #34d399;
+  --traaay-obsidian: #0f1117;
+  --traaay-amber: #f59e0b;
+}
+
+.dark {
+  --vp-c-bg: #0f1117;
+  --vp-c-bg-alt: #161a24;
+  --vp-c-bg-elv: #1c2230;
+  --vp-c-bg-soft: #181d29;
+
+  --vp-c-brand-1: #38bdf8;
+  --vp-c-brand-2: #3b82f6;
+  --vp-c-brand-3: #60a5fa;
+  --vp-c-brand-soft: rgba(56, 189, 248, 0.16);
+
+  --vp-c-border: #232a3b;
+  --vp-c-divider: #232a3b;
+}
+
+/* ---------------------------------------------------------------------------
+ * Équilibre du hero
+ *
+ * Le logo est l'icône applicative complète : un squircle plein, pas un
+ * pictogramme aéré. Au plafond VitePress de 320px il pesait plus lourd que le
+ * titre, et son conteneur, décalé de 32px vers le haut par le thème, ne
+ * partageait pas l'axe du bloc de texte. On le ramène à 208px et on aligne les
+ * deux centres.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  /* Le halo reprend les trois couleurs de strate. Sans lui, le squircle sombre
+     ne se détache pas du fond obsidienne : seules les barres colorées existent. */
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #38bdf8 20%, #3b82f6 50%, #34d399 80%);
+  --vp-home-hero-image-filter: blur(72px);
+}
+
+.VPHero .image-src {
+  max-width: 152px;
+  max-height: 152px;
+}
+
+.VPHero .image-bg {
+  width: 208px;
+  height: 208px;
+  opacity: 0.22;
+}
+
+@media (min-width: 640px) {
+  .VPHero .image-src {
+    max-width: 176px;
+    max-height: 176px;
+  }
+
+  .VPHero .image-bg {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (min-width: 960px) {
+  /* Les deux colonnes partagent enfin le même axe horizontal. */
+  .VPHero .container {
+    align-items: center;
+  }
+
+  .VPHero .image-container {
+    transform: none;
+    width: 208px;
+    height: 208px;
+  }
+
+  .VPHero .image-src {
+    max-width: 208px;
+    max-height: 208px;
+  }
+
+  .VPHero .image-bg {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Wordmark
+ *
+ * Les tracés vivent dans public/traaay-wordmark.svg et sont inlinés par le
+ * composant TraaayWordmark. Ici, uniquement les tailles selon l'emplacement :
+ * la hauteur porte sur l'encre du dessin (du sommet du T au jambage du y),
+ * pas sur une taille de police.
+ * ------------------------------------------------------------------------- */
+
+.traaay-wordmark--hero {
+  --wordmark-height: 34px;
+  margin-bottom: 4px;
+}
+
+.traaay-wordmark--nav {
+  --wordmark-height: 17px;
+  color: var(--vp-c-text-1);
+}
+
+@media (min-width: 640px) {
+  .traaay-wordmark--hero {
+    --wordmark-height: 46px;
+  }
+}
+
+@media (min-width: 960px) {
+  .traaay-wordmark--hero {
+    --wordmark-height: 54px;
+  }
+}
+
+/* Vitrine du wordmark dans la page Identité Visuelle. Le cadre suit le thème :
+   l'ancienne version forçait un fond sombre parce que les lettres d'ancrage
+   étaient blanches en dur et disparaissaient autrement. */
+.wordmark-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  padding: 32px 24px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+}
+
+/* Les trois « a » du nom quand il est écrit en toutes lettres dans le texte
+   courant, par exemple dans la première phrase de la page Identité Visuelle. */
+.traaay-a1 { color: #38bdf8; }
+.traaay-a2 { color: #3b82f6; }
+.traaay-a3 { color: #34d399; }
+
+/* Image showcases styling */
+.screenshot-frame {
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  background: var(--vp-c-bg-alt);
+  text-align: center;
+  padding: 12px;
+}
+
+.screenshot-frame img {
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.screenshot-caption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  font-style: italic;
+}
+
+/* Badge highlights */
+.badge-notch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-notch::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #f59e0b;
+}

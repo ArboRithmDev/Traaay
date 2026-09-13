@@ -1,0 +1,6 @@
+{
+  "pages_dir": "docs/reference",
+  "sources": [],
+  "tolerances": [],
+  "empty_inventory_reason": "Traaay ne gèle encore aucune source dérivée. La page docs/reference/index.md est rédigée et relue à la main à chaque version : aucune de ses valeurs n'est extraite du code, donc aucun extracteur n'est déclaré et aucune mesure de couverture n'a lieu. Le premier candidat à la dérivation est le type VisibilityLevel (always_visible | hidden_bar | totally_hidden), aujourd'hui recopié à la main dans la référence ; déclarer sa source supprimera ce champ."
+}

@@ -1,0 +1,16 @@
+{
+  "name": "traaay-documentation",
+  "version": "0.1.2",
+  "private": true,
+  "type": "module",
+  "description": "Documentation utilisateur de Traaay — site publié et copie hors-ligne.",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "node extract/run.mjs && vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "docs:extract": "node extract/run.mjs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

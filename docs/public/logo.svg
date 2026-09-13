@@ -1,0 +1,91 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Ombre portée globale squircle macOS -->
+    <filter id="squircle-shadow" x="0" y="0" width="1024" height="1024" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="32" flood-color="#000000" flood-opacity="0.55" />
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+
+    <!-- Dégradé fond Dark Obsidian -->
+    <linearGradient id="bg-grad" x1="512" y1="100" x2="512" y2="924" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1A1D27" />
+      <stop offset="45%" stop-color="#11131A" />
+      <stop offset="100%" stop-color="#090A0E" />
+    </linearGradient>
+
+    <!-- Liseré de bordure supérieur métallique -->
+    <linearGradient id="border-grad" x1="512" y1="100" x2="512" y2="924" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
+      <stop offset="20%" stop-color="#FFFFFF" stop-opacity="0.08" />
+      <stop offset="80%" stop-color="#FFFFFF" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Glow Strate 1 (Cyan) -->
+    <filter id="glow-cyan" x="200" y="290" width="624" height="240" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="grad-cyan" x1="302" y1="360" x2="722" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+
+    <!-- Glow Strate 2 (Electric Blue) -->
+    <filter id="glow-blue" x="250" y="390" width="524" height="240" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="grad-blue" x1="352" y1="465" x2="672" y2="545" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+
+    <!-- Glow Strate 3 (Soft Mint) -->
+    <filter id="glow-mint" x="310" y="490" width="404" height="240" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="20" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="grad-mint" x1="412" y1="570" x2="612" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+
+    <!-- Reflets brillants internes (highlights) -->
+    <linearGradient id="strata-highlight" x1="512" y1="0" x2="512" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Squircle Apple macOS officiel -->
+  <g filter="url(#squircle-shadow)">
+    <!-- Corps du Squircle -->
+    <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg-grad)" />
+    <!-- Bordure biseautée ultra-fine -->
+    <rect x="100" y="100" width="824" height="824" rx="185" fill="none" stroke="url(#border-grad)" stroke-width="2.5" />
+  </g>
+
+  <!-- 2. Reflet doux supérieur de surface (Glassmorphism ambiant) -->
+  <ellipse cx="512" cy="180" rx="320" ry="120" fill="#38BDF8" fill-opacity="0.06" filter="blur(50px)" />
+  <ellipse cx="512" cy="780" rx="280" ry="80" fill="#10B981" fill-opacity="0.04" filter="blur(45px)" />
+
+  <!-- 3. The Triple Strata -->
+  <!-- Strate 1 : Glacier Cyan (Large - 420x68) -->
+  <g filter="url(#glow-cyan)">
+    <rect x="302" y="370" width="420" height="68" rx="34" fill="url(#grad-cyan)" />
+    <rect x="302" y="370" width="420" height="68" rx="34" stroke="url(#strata-highlight)" stroke-width="1.5" fill="none" />
+  </g>
+
+  <!-- Strate 2 : Electric Blue (Médiane - 320x68) -->
+  <g filter="url(#glow-blue)">
+    <rect x="352" y="478" width="320" height="68" rx="34" fill="url(#grad-blue)" />
+    <rect x="352" y="478" width="320" height="68" rx="34" stroke="url(#strata-highlight)" stroke-width="1.5" fill="none" />
+  </g>
+
+  <!-- Strate 3 : Soft Mint (Compacte - 200x68) -->
+  <g filter="url(#glow-mint)">
+    <rect x="412" y="586" width="200" height="68" rx="34" fill="url(#grad-mint)" />
+    <rect x="412" y="586" width="200" height="68" rx="34" stroke="url(#strata-highlight)" stroke-width="1.5" fill="none" />
+  </g>
+</svg>
